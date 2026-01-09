@@ -8,11 +8,13 @@ import CustomCarousel from './components/CustomCarousel';
 import AppTimer from './components/Application';
 import Application from './App'
 import {Example} from './components/customspinner'
+import Buttons from './components/customFooter'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <CustomNavbar/>
     <CustomCarousel/>
    <Example/>
+   <Buttons/>
   </StrictMode>,
 )
