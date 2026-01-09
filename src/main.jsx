@@ -9,6 +9,7 @@ import AppTimer from './components/Application';
 import Application from './App'
 import {Example} from './components/customspinner'
 import Buttons from './components/customFooter'
+import JustifiedExample from './components/tab'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
@@ -16,5 +17,6 @@ createRoot(document.getElementById('root')).render(
     <CustomCarousel/>
    <Example/>
    <Buttons/>
+   <JustifiedExample/>
   </StrictMode>,
 )
