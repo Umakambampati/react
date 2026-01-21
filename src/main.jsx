@@ -6,17 +6,17 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import CustomCarousel from './components/CustomCarousel';
 // import CounterApp from './components/classComponents/CounterApp';
 import AppTimer from './components/Application';
-import Application from './App'
+import Application from './components/Application'
 import {Example} from './components/customspinner'
 import Buttons from './components/customFooter'
 import JustifiedExample from './components/tab'
+import ParentClass from './components/classcomponent';
+import Counter from './classcounter';
+import { Tab } from 'bootstrap';
+import Application2 from './components/Application';
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <CustomNavbar/>
-    <CustomCarousel/>
-   <Example/>
-   <Buttons/>
-   <JustifiedExample/>
+  <Application2/>
   </StrictMode>,
 )

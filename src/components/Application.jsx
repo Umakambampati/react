@@ -1,25 +1,36 @@
-import { useState } from "react"
+import CustomCarousel from "./CustomCarousel"
+import CustomNavbar from "./CustomNavbar"
+import { Example } from "./customspinner"
+import JustifiedExample from "./tab"
 
-
-
-
-function AppTimer(){
-    let [count,setcount]=useState(0)
-    const Increment=()=>{
-    setcount(prev=>prev+1)
-    setcount(prev=>prev+1)
-    setcount(prev=>prev+1)
+import React from "react"
+class Application2 extends React.Component{
+    state={
+        products:[]
     }
-    const Decrement=()=>{
-        setcount(prev=>prev-1)
-    }
-    return(
-        <>
-        <button onClick={Increment}>Increment</button>
-        <p>Count:{count}</p>
-        <button onClick={Decrement}>Decrement</button>
-        </>
+    fetchproducts=()=>{
+        fetch('https://dummyjson.com/recipes')
+.then(res => res.json())
+.then((response)=>{
+    this.setState({products:response.recipes})
+});
 
-    )
+    }
+    render(){
+        return(
+            <>
+            <CustomNavbar/>
+            <CustomCarousel/>
+            <button onClick={this.fetchproducts}>Fetchdata</button>
+            {this.state.products.length>0?<div style={{display:"flex",flexWrap:"wrap",gap:"20px"}}>
+                
+            {this.state.products.map(each=><div> <img src={each.image} style={{width:"200px",height:"200px"}}></img>
+            <h6>{each.name}</h6>
+           </div>)}
+            </div>:<Example/>}
+            <JustifiedExample/>
+            </>
+        )
+    }
 }
-export default AppTimer
+export default Application2
