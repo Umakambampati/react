@@ -1,4 +1,3 @@
-
 import { useEffect, useState } from "react";
 
 function FetchProducts(){
@@ -8,7 +7,8 @@ useEffect(()=>{
 .then(res => res.json())
 .then((jsonresponse)=>{
     setrecipes(jsonresponse.recipes)
-});},[])
+});},[]
+)
 
 return (
     <>
